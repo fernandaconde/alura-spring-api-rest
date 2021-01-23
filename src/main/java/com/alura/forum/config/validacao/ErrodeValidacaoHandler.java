@@ -29,6 +29,7 @@ public class ErrodeValidacaoHandler {
         fieldErrors.forEach(e -> {
             String mensagem = messageSource.getMessage(e, LocaleContextHolder.getLocale());
             ErroDeFormularioDTO erro = new ErroDeFormularioDTO(e.getField(), mensagem);
+            dto.add(erro);
         });
 
         return dto;
