@@ -58,9 +58,11 @@ public class SecurityConfigurations<main> extends WebSecurityConfigurerAdapter {
     // configurações de recursos estáticos (ex.: requisições para arquivos js, css, imagens, etc...)
     @Override
     public void configure(WebSecurity web) throws Exception {
-
+        web.ignoring()
+                .antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**");
     }
 
+// criptografar senha
 //    public static void main(String[] args) {
 //        System.out.println(new BCryptPasswordEncoder().encode("123456"));
 //    }
